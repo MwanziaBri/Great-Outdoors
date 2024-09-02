@@ -62,7 +62,9 @@ import {
         </Box>
 
         <Box
-          py={{ base: 32, md: 40 }}
+          pt={{ base: 32, md: 44 }}
+          // pb={{ base: 32, md: 0 }}
+
           // bgGradient='linear(to-br, #0e2a4e, whiteAlpha.100)'
           // bg={'#0e2a4e'}
           bg={'#0b1722'}
