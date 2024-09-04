@@ -2,7 +2,6 @@ import Head from 'next/head';
 import { Box } from '@chakra-ui/react';
 import NavBar from '../components/navbar';
 import Footer from '../components/footer';
-import AboutUsComponent2 from '../components/landingPage/AboutUsComponent2';
 
 export default function Home() {
   return (
@@ -21,6 +20,7 @@ export default function Home() {
         <link href="https://reservations.reserveport.com/static/css/app.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://www.reserveport.com/media/api5/bootstrap.min.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css" />
+        <link href="../styles/reserveport.module.css" rel="stylesheet" />
 
         <script type="text/javascript" src="https://www.reserveport.com/media/api5/popper.min.js"></script>
         <script type="text/javascript" src="https://www.reserveport.com/media/api5/bootstrap.min.js"></script>
@@ -39,7 +39,7 @@ export default function Home() {
         pt={{ base: 24, lg: 32 }}
       >
 
-      <booking-widget id="542"></booking-widget>
+      <booking-widget id="1687"></booking-widget>
 
       </Box>
 
