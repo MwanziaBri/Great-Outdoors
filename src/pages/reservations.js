@@ -20,7 +20,6 @@ export default function Home() {
         <link href="https://reservations.reserveport.com/static/css/app.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://www.reserveport.com/media/api5/bootstrap.min.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css" />
-        <link href="../styles/reserveport.module.css" rel="stylesheet" />
 
         <script type="text/javascript" src="https://www.reserveport.com/media/api5/popper.min.js"></script>
         <script type="text/javascript" src="https://www.reserveport.com/media/api5/bootstrap.min.js"></script>
