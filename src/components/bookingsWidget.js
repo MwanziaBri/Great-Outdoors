@@ -18,7 +18,7 @@ const stylesheets = [
   "https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css",
 ];
 
-export default function Head() {
+export default function Home() {
   useEffect(() => {
     // Function to dynamically load external scripts
     const loadScripts = () => {
