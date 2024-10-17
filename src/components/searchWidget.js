@@ -1,15 +1,8 @@
-import { useEffect, useState } from 'react';
-import { Box } from '@chakra-ui/react';
+import { useEffect } from 'react'
+import Script from 'next/script'
+import Head from 'next/head'
+import { Box } from '@chakra-ui/react'
 
-const scripts = [
-  "https://reservations.reserveport.com/checkavailability/static/js/manifest.js",
-  "https://reservations.reserveport.com/checkavailability/static/js/vendor.js",
-  "https://reservations.reserveport.com/checkavailability/static/js/app.js",
-  
-  "https://www.reserveport.com/media/api5/jquery.min.js",
-  "https://www.reserveport.com/media/api5/popper.min.js",
-  "https://www.reserveport.com/media/api5/bootstrap.min.js"
-];
 
 const stylesheets = [
   "https://reservations.reserveport.com/checkavailability/static/css/app.css",
@@ -18,62 +11,35 @@ const stylesheets = [
 ];
 
 export default function Home() {
-  const [scriptsLoaded, setScriptsLoaded] = useState(false);
-
   useEffect(() => {
-    // Load external scripts and stylesheets
-    const loadScripts = () => {
-      let loadedCount = 0;
-
-      scripts.forEach(src => {
-        if (!document.querySelector(`script[src="${src}"]`)) {
-          const script = document.createElement("script");
-          script.src = src;
-          script.async = true;
-          script.onload = () => {
-            loadedCount += 1;
-            if (loadedCount === scripts.length) {
-              setScriptsLoaded(true); // Mark scripts as fully loaded
-              initializeWidget(); // Explicitly call widget initialization
-            }
-          };
-          document.body.appendChild(script);
-        }
-      });
-    };
-
+    // Function to dynamically load external stylesheets
     const loadStylesheets = () => {
       stylesheets.forEach(href => {
         if (!document.querySelector(`link[href="${href}"]`)) {
           const link = document.createElement("link");
           link.href = href;
-          link.rel = "stylesheet";
-          document.head.appendChild(link);
+          link.rel = "stylesheet";  // Correctly set the rel attribute to "stylesheet"
+          document.head.appendChild(link); // Append to head, not body
         }
       });
     };
 
-    // Function to initialize the widget if it requires re-initialization
-    const initializeWidget = () => {
-      if (window && typeof window["initializeSearchAvailability"] === "function") {
-        window["initializeSearchAvailability"](); // Call the global function to initialize the widget if it exists
-      } else {
-        console.warn("Widget initialization function not found.");
-      }
-    };
-
-    loadScripts();
-    loadStylesheets();
-  }, []);
+    // Load custom script and styles only if not already present
+    loadStylesheets();   // Load the external styles when component mounts
+  }, []);  // Empty dependency array ensures this runs once on component mount
 
   return (
     <>
-      {/* Only render the <search-availability> component once scripts are fully loaded */}
-      {scriptsLoaded ? (
-        <search-availability id="1687" clientemail="true"></search-availability>
-      ) : (
-        <Box>Loading widget...</Box>
-      )}
+    <Head>
+      <Script src="https://reservations.reserveport.com/checkavailability/static/js/manifest.js" strategy="beforeInteractive" />
+      <Script src="https://reservations.reserveport.com/checkavailability/static/js/vendor.js" strategy="beforeInteractive" />
+      <Script src="https://reservations.reserveport.com/checkavailability/static/js/app.js" strategy="beforeInteractive" />
+
+      <Script src="https://www.reserveport.com/media/api5/jquery.min.js" strategy="beforeInteractive" />
+      <Script src="https://www.reserveport.com/media/api5/popper.min.js" strategy="beforeInteractive" />
+      <Script src="https://www.reserveport.com/media/api5/bootstrap.min.js" strategy="beforeInteractive" />
+    </Head>
+    <search-availability id="1687" clientemail="true"></search-availability>
     </>
   );
 }

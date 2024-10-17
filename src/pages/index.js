@@ -69,8 +69,19 @@ export default function Home() {
         <meta property="og:url" content="https://greatoutdoorsuganda.com/" />
         <meta property="og:type" content="website" />
 
-
         <link rel="icon" href="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
+     
+        <link href="https://reservations.reserveport.com/static/css/app.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://www.reserveport.com/media/api5/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css" />
+
+        <script src="https://reservations.reserveport.com/static/js/manifest.js"></script>
+        <script src="https://reservations.reserveport.com/static/js/vendor.js"></script>
+        <script src="https://reservations.reserveport.com/static/js/app.js"></script>
+
+        <script src="https://www.reserveport.com/media/api5/jquery.min.js" async></script>
+        <script src="https://www.reserveport.com/media/api5/popper.min.js" async></script>
+        <script src="https://www.reserveport.com/media/api5/bootstrap.min.js" async></script>
       </Head>
 
       <Box>
