@@ -21,13 +21,13 @@ export default function Home() {
         <link rel="stylesheet" href="https://www.reserveport.com/media/api5/bootstrap.min.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css" />
 
-        <script type="text/javascript" src="https://www.reserveport.com/media/api5/popper.min.js"></script>
-        <script type="text/javascript" src="https://www.reserveport.com/media/api5/bootstrap.min.js"></script>
-        <script src="https://www.reserveport.com/media/api5/jquery.min.js"></script>
-
         <script src="https://reservations.reserveport.com/static/js/manifest.js"></script>
         <script src="https://reservations.reserveport.com/static/js/vendor.js"></script>
         <script src="https://reservations.reserveport.com/static/js/app.js"></script>
+
+        <script src="https://www.reserveport.com/media/api5/jquery.min.js" async></script>
+        <script src="https://www.reserveport.com/media/api5/popper.min.js" async></script>
+        <script src="https://www.reserveport.com/media/api5/bootstrap.min.js" async></script>
       </Head>
 
       <Box>
