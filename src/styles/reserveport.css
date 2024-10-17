@@ -84,10 +84,6 @@ search-availability #booking-widget #vue-dropdown-home.dropdown-menu::after {
 /* General element styling */
 /* General element styling */
 
-booking-widget #booking-widget {
-  padding-top: 8rem;     /* Page top */
-}
-
 booking-widget #booking-widget .icon {
   position: relative;
   width: 100%;

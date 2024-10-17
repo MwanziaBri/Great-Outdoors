@@ -33,8 +33,18 @@ export default function Home() {
       <Box>
         <NavBar />
       </Box>
-      <Box>
-      <booking-widget id="1687"></booking-widget>
+      <Box 
+        bg={'whiteAlpha'} 
+        backgroundSize={'cover'}
+        bgRepeat={'no-repeat'}
+        minHeight={'100vh'} 
+        // mt={{base: 20, lg: 44}}
+        pt={{base: 24, lg: 32}}
+        // className={styles.someClass}  // Example usage of imported styles
+      >
+        <Box >
+          <booking-widget id="1687"></booking-widget>
+        </Box>
       </Box>
       <Box>
         <Footer />
