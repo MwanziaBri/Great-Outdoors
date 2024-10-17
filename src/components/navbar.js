@@ -38,11 +38,12 @@ import {
   function ReservationsButton() {
     return (
         <Button  size={{base:'xs', md: 'sm'}} 
-        letterSpacing={'2px'} rounded='sm' 
+        
+        letterSpacing={{base:'1px', md: '2px'}} rounded='sm' 
         colorScheme='red' fontFamily={'redTopFont'}
         // href={'/reservations'}
         >
-          <Link href='/reservations'>
+          <Link href='/reservations' fontSize={{base: '7px', md: 'sm'}} >
             RESERVATIONS
           </Link>
           
@@ -62,14 +63,17 @@ import {
       zIndex={9999}
       top={{md:'25px'}}
       // left={'0px'}
-      position={'absolute'}
+      position={{base:'absolute', lg: 'absolute'}}
       width={'100vw'}
       align={'center'}
+      
 
       >
         <Flex
         overflow='-moz-hidden-unscrollable'
           bg={useColorModeValue('white', 'gray.800')}
+        
+          
           color={useColorModeValue('gray.600', 'white')}
           shadow={'xl'}
           w={{base: '100%', md:'90%'}}
@@ -78,9 +82,9 @@ import {
           py={{ base: 2 }}
           px={{ base: 4 }}
           rounded={{base: 'none', md: 'lg'}}
-          // borderBottom={1}
+          borderBottom={1}
           borderStyle={'solid'}
-          borderColor={useColorModeValue('gray.200', 'gray.900')}
+          borderColor={useColorModeValue('white', 'gray.900')}
           align={'center'}
           >
           <Flex
@@ -90,7 +94,7 @@ import {
             <IconButton
               onClick={onToggle}
               icon={
-                isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
+                isOpen ? <CloseIcon w={3} h={3} color='black'  /> : <HamburgerIcon w={5} h={5} color='black' />
               }
               variant={'ghost'}
               aria-label={'Toggle Navigation'}
@@ -100,7 +104,7 @@ import {
 
           <Flex 
             justify={{ base: 'center', md: 'left' }}
-            ml={{base:24, md: 8}}
+            ml={{base:20, md: 8}}
             >
               <NextLink href='/#' passHref>
                     <NextImage 
@@ -110,16 +114,6 @@ import {
             </Flex>
 
           <Box flex={{ base: 1 }} justify={{ base: 'center', md: 'flex-start' }}>
-            {/* <Flex 
-            justify={{ base: 'center', md: 'left' }}
-            >
-              <NextLink href='/#' passHref>
-                    <NextImage 
-                    src={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png'} 
-                    width={40} height={40}/>
-              </NextLink>
-            </Flex> */}
-
               <Flex display={{ base: 'none', md: 'none' , lg: 'flex'}} justify={{ base: 'center', md: 'center' }} >
                 <DesktopNav />
               </Flex>
@@ -243,7 +237,7 @@ import {
   const MobileNav = () => {
     return (
       <Stack
-        bg={useColorModeValue('white', 'gray.800')}
+        bg={useColorModeValue('whiteAlpha.900', 'gray.800')}
         p={4}
         display={{ md: 'none' }}>
         {NAV_ITEMS.map((navItem) => (
@@ -295,7 +289,7 @@ import {
             align={'start'}>
             {children &&
               children.map((child) => (
-                <NextLink href={child.href} key={child.label} passHref>
+                <NextLink href={child.href} key={child.label}  fontFamily={'navBarFont'} passHref>
                   {/* <Link  py={2}  fontFamily="redTopFont" > */}
                     {child.label}
                   {/* </Link> */}

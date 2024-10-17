@@ -3,55 +3,104 @@ import { useInView } from "framer-motion";
 
 import { chakra, Box, Flex, Icon, Stack, Text, HStack, Divider, ScaleFade } from "@chakra-ui/react";
 import { BsPerson } from 'react-icons/bs';
+import * as Icons from "react-icons/fa";
 
 
 export default function AmenitiesComponent(){
   const ref1 = useRef(null)
   const isInView1 = useInView(ref1)
 
+
+  
   const Feature = (props) => {
+
+    const DynamicFaIcon = ({ name }) => {
+      // console.log('ICON!!')
+      // console.log(name)
+      const IconComponent = Icons[name];
+      // console.log(IconComponent)
+  
+    
+      if (!IconComponent) { // Return a default one
+        return <Icons.FaCameraRetro size={24} />;
+        // return <Icons.FaBeer />;
+
+      }
+    
+      return <IconComponent size={24} color='#0e2a4e'  />;
+    };
+  
+
     return (
       <Flex mb={4} >
         <Flex shrink={0}>
           <Flex
             alignItems="center"
             justifyContent="center"
-            h={12}
-            w={12}
+            h={{base:12, md: 24}}
+            w={{base:12, md: 10}}
             rounded="md"
             _light={{ bg: "brand.500" }}
             color="gray.900"
           >
-            <Icon
-              boxSize={6}
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              aria-hidden="true"
-            >
-              {props.icon}
-            </Icon>
+
+
+      
+      <Box mr="4" boxSize={{base:'1em', md:'1em'}} >
+        {/* <DynamicFaIcon name="FaCameraRetro" /> */}
+        {/* <DynamicFaIcon name="FaGlassMartini" /> */}
+        {/* <DynamicFaIcon name="FaCameraRetro" /> */}
+        {/* <DynamicFaIcon name="FaBatteryFull" /> */}
+        {/* <DynamicFaIcon name="FaLeaf" /> */}
+
+        {/* <DynamicFaIcon name="FaBusinessTime" /> */}
+        {/* <DynamicFaIcon name="FaBatteryFull" /> */}
+        {/* <DynamicFaIcon name="FaUserClock" /> */}
+        <DynamicFaIcon name={props.icon} />
+
+
+
+      </Box>
+      
+
+            
+          {/* <Icon
+            mr={{base: 4, md: 6}}
+            fontSize={{base: 18, md: 10}}
+            // fontSize="16"
+
+            boxSize={{base:'1em', md:'2em'}}
+            _groupHover={{
+              color: 'white',
+            }}
+            as={icon}
+          /> */}
+        
+
+
           </Flex>
         </Flex>
         <Box ml={4}>
-          <chakra.dt
-            fontSize={{base:"lg", lg: 'xl', xl: '2xl'}}
-            fontWeight="medium"
-            lineHeight="8"
-            fontFamily='navBarFont'
-
-            _light={{ color: "gray.900" }}
-          >
+        <Text
+        fontFamily={'navBarFont'} 
+        letterSpacing={'1px'} 
+        pt={{base:2, md: 2, lg: 4, xl: 4}} 
+        lineHeight={{lg: '55px' ,xl:'55px'}} 
+        // textColor='white'
+        textColor='#0e2a4e'
+        textAlign={'left'}
+        fontWeight={800} 
+        fontSize={{base:'lg' ,lg: 'xl', xl:'3xl'}}
+        >
             {props.title}
-          </chakra.dt>
-          <chakra.dd mt={2} 
-          color="gray.900" _dark={{ color: "gray.600" }} 
-          fontFamily='bodyFont'
-          fontSize={{base:"lg", lg: 'md',xl: 'lg'}}
-
-          >
+          </Text>
+          <Text 
+                textColor={'gray.600'}
+                fontFamily={'bodyFont'}  
+                fontSize={{base:'sm', md: 'lg'}} 
+                py={2} fontWeight={400}>
             {props.children}
-          </chakra.dd>
+          </Text>
         </Box>
       </Flex>
     );
@@ -60,17 +109,19 @@ export default function AmenitiesComponent(){
 
   return (
     <Flex
-      p={{base: 6,  md: 12, lg: 16, xl: 44}}
+      p={{base: 4,  md: 12, lg: 16, xl: 44}}
       w="full"
       justifyContent="center"
       alignItems="center"
       // bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101466/IMG_4045-scaled_umaqq6.jpg'}
       bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101466/IMG_4045-scaled_umaqq6.jpg'}
       bgSize="cover" bgPosition="center" bgAttachment="fixed"
+                   overflowX='hidden'
+
       minH={{base:' 260vh', md:'170vh'}} 
     >
-      <ScaleFade initialScale={0.8}
-          in={isInView1}>
+      {/* <ScaleFade initialScale={0.8}
+          in={isInView1}> */}
 
       <Box 
       ref={ref1}
@@ -88,13 +139,13 @@ export default function AmenitiesComponent(){
                
 
              <Text  fontFamily={'navBarFont'} 
-            letterSpacing={'1px'} 
-            pb={{base:6, md: 4, lg: 4, xl: 8}} 
-            lineHeight={{lg: '55px' ,xl:'55px'}} 
-            // textColor='white'
-            textColor='#0e2a4e'
-            
-            fontWeight={800} fontSize={{base:'35px' ,lg: '45px', xl:'50px'}}>
+                letterSpacing={'1px'} 
+                pb={{base:8, md: 4, lg: 4, xl: 8}} 
+                lineHeight={{lg: '55px' ,xl:'55px'}} 
+                // textColor='white'
+                textColor='#0e2a4e'              
+                fontWeight={800} 
+                fontSize={{base:'30px' ,lg: '35px', xl:'50px'}}>
               Make Your Stay Memorable
             </Text>
           </Box>
@@ -109,14 +160,7 @@ export default function AmenitiesComponent(){
             >
               <Feature
                 title="Feel nature"
-                icon={
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
-                  />
-                }
+                icon={'FaTree'}
               >
                 The resort is right in the forest, and surrounded by airy lush green spaces.
               </Feature>
@@ -124,12 +168,7 @@ export default function AmenitiesComponent(){
               <Feature
                 title="Open air spaces"
                 icon={
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"
-                  />
+                  'FaWind'
                 }
               >
                 Eat, lounge or just take a walk in the forest, smell the eucalyptus in the air.
@@ -138,12 +177,7 @@ export default function AmenitiesComponent(){
               <Feature
                 title="Farm-to-plate"
                 icon={
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M13 10V3L4 14h7v7l9-11h-7z"
-                  />
+                  'FaRegLemon'
                 }
               >
                 Fresh food, right from the farm prepared by an experienced chef.
@@ -152,12 +186,7 @@ export default function AmenitiesComponent(){
               <Feature
                 title="Swimming Pool"
                 icon={
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"
-                  />
+                  'FaSwimmingPool'
                 }
               >
                 Two varied sized swimming pools are up and ready for you to take a dive into.
@@ -166,12 +195,7 @@ export default function AmenitiesComponent(){
               <Feature
                 title="Pick & Drop Facility"
                 icon={
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"
-                  />
+                  'FaCar'
                 }
               >
                 For groups and individuals we can arrange your pick-up and drop off.
@@ -180,12 +204,7 @@ export default function AmenitiesComponent(){
               <Feature
                 title="Wifi"
                 icon={
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"
-                  />
+                  'FaWifi'
                 }
               >
                 Limited wifi due to our remote location, you can access wifi in designated locations
@@ -195,7 +214,7 @@ export default function AmenitiesComponent(){
         </Box>
       </Box>
 
-      </ScaleFade>
+      {/* </ScaleFade> */}
     </Flex>
   );
 };

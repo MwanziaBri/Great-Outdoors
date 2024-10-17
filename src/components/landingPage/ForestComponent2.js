@@ -16,12 +16,14 @@ const AboutUsComponent2 = () => {
     <Box minH={'100vh'} >
       <Box minH={{base:' 160vh', md:'120vh'}} bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720011506/MG_4163_vbv2ja.jpg'} 
              bgSize="cover" bgPosition="center" 
+             overflowX='hidden'
+
 
        >
         {/* <ScaleFade initialScale={0.8}
             in={isInView1}> */}
 
-            <HStack p={{base:8, md: 4,lg:8, xl: 20}} float={{base: 'none', md:'left'}}>
+            <HStack p={{base:4, md: 4,lg:8, xl: 20}} float={{base: 'none', md:'left'}}>
             <Box 
             ref={ref1}
             bg={'whiteAlpha.900'} 
@@ -29,7 +31,9 @@ const AboutUsComponent2 = () => {
             borderColor='white'
             maxW={{base: '6xl', md: 'lg', lg: 'md',  xl:'xl'}}
             p={{base: 3, md: 6, lg:10, xl: 14}} rounded={'lg'}
-            pt={{base: 8,  md: 12, xl: 24}}>
+            my={{base:'64', md: '0vh'}}
+
+            pt={{base: 2,  md: 12, xl: 24}}>
 
             <Box p={{base: 4, md: 4, lg: 0}}>
                 <HStack mt={{base:6,  md:2}}>
@@ -44,24 +48,22 @@ const AboutUsComponent2 = () => {
                 pb={{base:8, md: 4, lg: 4, xl: 8}} 
                 lineHeight={{lg: '55px' ,xl:'55px'}} 
                 // textColor='white'
-                textColor='#0e2a4e'
-                
-                fontWeight={800} fontSize={{base:'35px' ,lg: '35px', xl:'50px'}}>
+                textColor='#0e2a4e'              
+                fontWeight={800} 
+                fontSize={{base:'30px' ,lg: '35px', xl:'50px'}}>
                 A Truly Natural Experience for the Senses
                 </Text>
 
                 <Text 
-                // textColor='white'
-                // textColor='blue.800'
-                textColor='#0e2a4e'
-
-                fontFamily={'bodyFont'} fontSize='lg' py={4} fontWeight={400}>
+                textColor={'gray.600'}
+                fontFamily={'bodyFont'}  
+                fontSize={{base:'sm', md: 'lg'}} 
+                py={2} fontWeight={400}>
                 For special rates please contact the front office : +256 701519853
                 </Text>
 
-                <Box py={{base:10, md: 6}} >
-                <Button fontFamily={'bodyFont'} colorScheme='red' textColor='white' fontSize='lg'>
-                    See Offers and Discounts
+                <Box pt={{base:10, md: 6}} pb={{base:2, md: 6}} >
+                <Button fontFamily={'bodyFont'} colorScheme='red' textColor='white' fontSize='lg' href='/gallery'>
                 </Button>
                 </Box>
                 </Box>

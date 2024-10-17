@@ -7,7 +7,7 @@ import { Box, Flex, Text} from '@chakra-ui/react'
 
 
 
-const Carousel2 =(props)=> {
+const Carousel3 =(props)=> {
 
   const slides = props.slides;
 
@@ -40,29 +40,34 @@ const Carousel2 =(props)=> {
         
     //   ] 
         return (
-          <Box  bgColor={'#0b1722'}
-          mb={-16} >
+          <Box  
+          // bgColor={'#0b1722'}
+          // mb={-16} 
+          >
             <Carousel
             preventMovementUntilSwipeScrollTolerance={true} 
              swipeScrollTolerance={50}
             >
               {slides.map((slide, sid) => (                
                 <Box
-                minH='100vh' 
+                // minH='100vh' 
                 w='full'
-                backgroundSize={'cover'}
-                bgPosition="center" 
-                bgRepeat={'no-repeat'}  
+                // backgroundSize={'cover'}
+                // bgPosition="center" 
+                // bgRepeat={'no-repeat'}  
                 // backgroundImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719928250/IMG_3683-scaled_wby9wk.jpg'}   
-                backgroundImage={slide.img}  
+                // backgroundImage={slide.img}  
                  
                 >
-                  <Box maxW={{base:'xl', md: 'xl'}}>
-                  <Text fontFamily='navBarFont' textColor='white' fontSize={{base: '5xl', md:'7xl'}} pt={'45vh'} >
-                    {slide.label}
-                  </Text>
+
+                  <Box >
+                    <Image
+                      src={slide.img}
+                      height={slide.height}
+                      width={slide.width}
+
+                    />
                   </Box>
-                  <Box ></Box>
                 </Box>
                 ))}
             </Carousel>
@@ -71,4 +76,4 @@ const Carousel2 =(props)=> {
 };
 
 
-export default Carousel2
+export default Carousel3

@@ -2,7 +2,7 @@ import React from 'react'
 import { Box, Center, Text, Button, HStack, Icon, Divider, SimpleGrid } from '@chakra-ui/react'
 import Image from 'next/image'
 import TestimonialCard from './TestimonialCard'
-import Carousel from '../carousel'
+import Carousel from '../carousel3'
 
 const testimonials = [
   {

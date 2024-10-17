@@ -143,6 +143,35 @@ const HeadingSection = () => {
   )
 }
 
+    const slides =[
+        {   
+            img: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719928250/IMG_3683-scaled_wby9wk.jpg",
+            width: 770,
+            height: 300,
+            caption: "Great Outdoors",
+            label: "At Home in Nature",
+    
+        },
+        {   
+          img: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716990249/MG_2753-2_vkitl3.jpg",
+          width: 1024,
+          height: 683,
+          caption: "Great Outdoors",
+          label: "Cozy Cottages",
+        
+        },
+        {   
+          img: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716990366/MG_2898-2_y3khog.jpg",
+          width: 1024,
+          height: 683,
+          caption: "Great Outdoors",
+          label: "Corporate Retreats",
+        
+        },
+        
+        
+      ] 
+
 //Make this into a Carousel
 const Section1 = () => {
   return (
@@ -159,7 +188,8 @@ const Section1 = () => {
     borderColor={"white"}
     mt={{ base: "10vh", lg: "25vh" }}
   >
-      <Carousel />
+      <Carousel slides={slides} />
+
       <Section1Content />
     </Container>
   )

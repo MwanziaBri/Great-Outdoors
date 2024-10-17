@@ -7,16 +7,23 @@ const OffersComponent = () => {
     <Box minH={'100vh'} >
       <Box minH={{base:' 160vh', md:'100vh'}} bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720012553/IMG_8943-2_jh9wgb.jpg'} 
              bgSize="cover" bgPosition="center" bgAttachment="fixed" 
+             overflowX='hidden'
+
 
        >
 
-        <HStack p={{base:8, md: 4,lg:8, xl: 20}} float={{base: 'none', md:'right'}}>
+        <HStack p={{base:4, md: 4,lg:8, xl: 20}} float={{base: 'none', md:'right'}}>
           <Box 
           bg={'whiteAlpha.300'} 
           border={'2px'}
           borderColor='white'
           maxW={{base: '6xl', md: 'lg', lg: 'md',  xl:'xl'}}
-           p={{base: 3, md: 6, lg:10, xl: 14}} rounded={'lg'}>
+          my={{base:'64', md: '0vh'}}
+
+           p={{base: 3, md: 6, lg:10, xl: 14}} 
+           pt={{base: 2,  md: 12, xl: 24}}
+
+           rounded={'lg'}>
 
           <Box p={{base: 4, md: 4, lg: 0}}>
             <HStack mt={{base:6,  md:2}}>
@@ -26,32 +33,33 @@ const OffersComponent = () => {
               </Text>
             </HStack>
 
-            <Text  fontFamily={'navBarFont'} 
-            letterSpacing={'1px'} 
-            pb={{base:8, md: 4, lg: 4, xl: 8}} 
-            lineHeight={{lg: '55px' ,xl:'55px'}} 
-            textColor='white'
-            // textColor='#0e2a4e'
-            
-            fontWeight={800} fontSize={{base:'35px' ,lg: '35px', xl:'50px'}}>
+                <Text  fontFamily={'navBarFont'} 
+                letterSpacing={'1px'} 
+                pb={{base:8, md: 4, lg: 4, xl: 8}} 
+                lineHeight={{lg: '55px' ,xl:'55px'}} 
+                textColor='white'
+                // textColor='#0e2a4e'              
+                fontWeight={800} 
+                fontSize={{base:'30px' ,lg: '35px', xl:'50px'}}>
             Christmas Season Full Board Offers
             </Text>
 
             <Text 
-            textColor='white'
-            // textColor='blue.800'
-
-             fontFamily={'bodyFont'} fontSize='lg' py={4} fontWeight={400}>
+                textColor='white'
+                fontFamily={'bodyFont'}  
+                fontSize={{base:'sm', md: 'lg'}} 
+                py={2} fontWeight={400}>
               Double Cottages at UGX500,000 and Family Cottages starting at UGX650,000 with all meals included.
             </Text>
             <Text 
-            textColor='white'
-            // textColor='blue.800'
-             fontFamily={'bodyFont'} fontSize='lg'>
+                textColor='white'
+                fontFamily={'bodyFont'}  
+                fontSize={{base:'sm', md: 'lg'}} 
+                py={2} fontWeight={400}>
               Single and Double Deluxe Rooms starting at UGX300,000 | Family Deluxe Rooms starting UGX550,000
             </Text>
 
-            <Box py={{base:10, md: 6}} >
+            <Box pt={{base:10, md: 6}} pb={{base:2, md: 6}}>
               <Button fontFamily={'bodyFont'} colorScheme='red' textColor='white' fontSize='lg'>
                 See Offers and Discounts
               </Button>

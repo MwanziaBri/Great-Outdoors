@@ -201,9 +201,19 @@ const imageGridImages =[
 ] 
 
 
-export default function CottagePage() {
+export default function GalleryPage() {
   return (
-    <Box>
+    <Box 
+    bgImage={
+      'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720099212/IMG_844443-2_lvd6bz.jpg'
+    }
+    bgSize="cover"
+    bgRepeat='no-repeat'
+    bgPosition="center"
+    bgAttachment="fixed"
+    overflowX='hidden'
+    minH={'80dvh'}
+    >
     <Head>
       <title>Gallery | Great Outdoors</title>
       <meta name="description" content="Retreat.Rest.Rejuvenate" />
@@ -230,12 +240,13 @@ export default function CottagePage() {
         // bgGradient='linear(to-br, #0e2a4e, whiteAlpha.100)'
         // bg={'#0e2a4e'}
       //   bg={'#0b1722'}
-        bgImage={
-          'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720099212/IMG_844443-2_lvd6bz.jpg'
-        }
-        bgSize="cover"
-        bgPosition="center"
-        bgAttachment="fixed"
+        // bgImage={
+        //   'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720099212/IMG_844443-2_lvd6bz.jpg'
+        // }
+        // bgSize="cover"
+        // bgPosition="center"
+        // bgAttachment="fixed"
+        // overflowX='hidden'
       >
 
         <HeadingSection />
