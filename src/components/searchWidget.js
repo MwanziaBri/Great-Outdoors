@@ -60,16 +60,6 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        {/* Ensure the external scripts are pre-loaded in the head */}
-        <Script src="https://reservations.reserveport.com/checkavailability/static/js/manifest.js" strategy="beforeInteractive" />
-        <Script src="https://reservations.reserveport.com/checkavailability/static/js/vendor.js" strategy="beforeInteractive" />
-        <Script src="https://reservations.reserveport.com/checkavailability/static/js/app.js" strategy="beforeInteractive" />
-
-        <Script src="https://www.reserveport.com/media/api5/jquery.min.js" strategy="beforeInteractive" />
-        <Script src="https://www.reserveport.com/media/api5/popper.min.js" strategy="beforeInteractive" />
-        <Script src="https://www.reserveport.com/media/api5/bootstrap.min.js" strategy="beforeInteractive" />
-      </Head>
 
       {/* Render the <search-availability> component only when scripts are loaded */}
       {scriptsLoaded ? (
