@@ -1,8 +1,7 @@
 
 /* Reserveport search widget styles */
 
-a.chakra-link {
-  color: inherit;
+a.chakra-link:hover {
   text-decoration: none;
 }
 
