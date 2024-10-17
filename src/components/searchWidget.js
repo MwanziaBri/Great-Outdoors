@@ -1,7 +1,5 @@
-import { useEffect, useState } from 'react'
-import Script from 'next/script'
-import Head from 'next/head'
-import { Box } from '@chakra-ui/react'
+import { useEffect, useState } from 'react';
+import { Box } from '@chakra-ui/react';
 
 const scripts = [
   "https://reservations.reserveport.com/checkavailability/static/js/manifest.js",
@@ -20,11 +18,13 @@ const stylesheets = [
 ];
 
 export default function Home() {
+  const [scriptsLoaded, setScriptsLoaded] = useState(false);
 
   useEffect(() => {
-    // Function to dynamically load external scripts
+    // Load external scripts and stylesheets
     const loadScripts = () => {
       let loadedCount = 0;
+
       scripts.forEach(src => {
         if (!document.querySelector(`script[src="${src}"]`)) {
           const script = document.createElement("script");
@@ -33,7 +33,8 @@ export default function Home() {
           script.onload = () => {
             loadedCount += 1;
             if (loadedCount === scripts.length) {
-              setScriptsLoaded(true); // All scripts are loaded
+              setScriptsLoaded(true); // Mark scripts as fully loaded
+              initializeWidget(); // Explicitly call widget initialization
             }
           };
           document.body.appendChild(script);
@@ -41,7 +42,6 @@ export default function Home() {
       });
     };
 
-    // Function to dynamically load external stylesheets
     const loadStylesheets = () => {
       stylesheets.forEach(href => {
         if (!document.querySelector(`link[href="${href}"]`)) {
@@ -53,11 +53,27 @@ export default function Home() {
       });
     };
 
+    // Function to initialize the widget if it requires re-initialization
+    const initializeWidget = () => {
+      if (window && typeof window["initializeSearchAvailability"] === "function") {
+        window["initializeSearchAvailability"](); // Call the global function to initialize the widget if it exists
+      } else {
+        console.warn("Widget initialization function not found.");
+      }
+    };
+
     loadScripts();
     loadStylesheets();
   }, []);
 
   return (
+    <>
+      {/* Only render the <search-availability> component once scripts are fully loaded */}
+      {scriptsLoaded ? (
         <search-availability id="1687" clientemail="true"></search-availability>
+      ) : (
+        <Box>Loading widget...</Box>
+      )}
+    </>
   );
 }
