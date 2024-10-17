@@ -20,7 +20,6 @@ const stylesheets = [
 ];
 
 export default function Home() {
-  const [scriptsLoaded, setScriptsLoaded] = useState(false);
 
   useEffect(() => {
     // Function to dynamically load external scripts
@@ -59,14 +58,6 @@ export default function Home() {
   }, []);
 
   return (
-    <>
-
-      {/* Render the <search-availability> component only when scripts are loaded */}
-      {scriptsLoaded ? (
         <search-availability id="1687" clientemail="true"></search-availability>
-      ) : (
-        <Box>Loading widget...</Box>
-      )}
-    </>
   );
 }
