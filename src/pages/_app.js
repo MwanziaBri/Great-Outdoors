@@ -6,10 +6,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 //fonts - https://github.com/chakra-ui/chakra-ui/discussions/7235
 import { Space_Mono, Roboto, Playfair_Display, Poppins, Inter } from 'next/font/google'
 import Footer from '../components/footer' 
-
 import NavBar from '../components/navbar' 
-
-
 
 import { extendTheme } from '@chakra-ui/react'
 
