@@ -21,8 +21,6 @@ import AboutUsComponent2 from '../components/landingPage/AboutUsComponent2'
 import EatAndDrinkComponent2 from '../components/landingPage/EatAndDrinkComponent2'
 import Carousel2 from '../components/carousel2'
 
-import BookingsWidget from '../components/bookingsWidget'
-
 import NavBar from '../components/navbar' 
 import Footer from '../components/footer' 
 
@@ -85,18 +83,32 @@ export default function Home(props) {
   console.log('props')
   console.log(props)
 
-  return (
+ return (
     <Box>
       <Head>
         <title>Great Outdoors Kalanamu - Retreat.Rest.Rejuvenate</title>
         <meta name="description" content="Retreat.Rest.Rejuvenate" />
+
         <meta property="og:title" content="Great Outdoors Kalanamu" />
         <meta property="og:description" content="Eco-friendly forest resort, located only 45 minutes (about 35km) drive from Kampala" />
         <meta property="og:image" content="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
         <meta property="og:image:secure_url" content="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
         <meta property="og:url" content="https://greatoutdoorsuganda.com/" />
         <meta property="og:type" content="website" />
+
         <link rel="icon" href="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
+     
+        <link href="https://reservations.reserveport.com/static/css/app.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://www.reserveport.com/media/api5/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css" />
+
+        <script src="https://reservations.reserveport.com/checkavailability/static/js/manifest.js"></script>
+        <script src="https://reservations.reserveport.com/checkavailability/static/js/vendor.js"></script>
+        <script src="https://reservations.reserveport.com/checkavailability/static/js/app.js"></script>
+
+        <script src="https://www.reserveport.com/media/api5/jquery.min.js" async></script>
+        <script src="https://www.reserveport.com/media/api5/popper.min.js" async></script>
+        <script src="https://www.reserveport.com/media/api5/bootstrap.min.js" async></script>
       </Head>
 
       <Box>
@@ -110,6 +122,7 @@ export default function Home(props) {
       >
         <Box>
           <Carousel2  slides={slides}/>
+          <search-availability id="1687" clientemail="true"></search-availability>
           <AboutUsComponent2  pageContent={props.landingPageContent}/>
           <CorporateComponent  pageContent={props.landingPageContent}/>
           <EatAndDrinkComponent2 pageContent={props.landingPageContent}/>
@@ -126,5 +139,3 @@ export default function Home(props) {
       
   )
 }
-
-

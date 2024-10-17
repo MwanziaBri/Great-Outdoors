@@ -1,0 +1,297 @@
+
+/* Reserveport search widget styles */
+
+a.chakra-link:hover {
+  text-decoration: none;
+  color: white;
+}
+
+search-availability {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 0px;
+  display: block;
+  background: none;
+  position: absolute;
+  margin-top: -7rem;
+  left: 0;
+  right: 0;
+}
+/* Responsive screen - Mobile & Tablet */
+@media (min-width: 1024px) {
+  search-availability {
+    width: 76%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  search-availability {
+    margin-top: -18rem;
+  }
+}
+
+search-availability #booking-widget .reserveport-form-wrap {
+  padding: .75rem 0 !important;
+  box-shadow: 0px 0px 12px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 0 !important;
+  border-radius: var(--chakra-radii-md);
+}
+
+@media only screen and (max-width: 600px) {
+  #booking-widget .reserveport-form-wrap, #booking-widget .vue-search-box {
+    display: block;
+  }
+}
+
+search-availability #booking-widget .vue-date-box .vue-btn-wrap.avail-wrap.vue-md_p5 {  
+  background: none !important;
+}
+
+search-availability #booking-widget .vue-coupon_code_screen[data-v-49eef604] {
+  max-width: fit-content;
+}
+
+search-availability #booking-widget, 
+search-availability #app #booking-widget .vue-date-box label, 
+search-availability #booking-widget input.vue-email_screen {
+    font-family: var(--chakra-fonts-bodyFont), sans-serif;
+}
+search-availability #app #booking-widget div.vue-search-box {
+  margin-bottom: 0;
+}
+
+search-availability #booking-widget #vue-btn-search.btn-orange-solid { 
+    background: var(--chakra-colors-red-600) !important;
+    color: white; 
+    font: 600 1em var(--chakra-fonts-bodyFont), sans-serif;
+    border-radius: var(--chakra-radii-md);
+}
+
+search-availability a#havepromo.vue-horizontal { 
+  color: var(--chakra-colors-red-600) !important;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+search-availability #booking-widget #vue-dropdown-home.dropdown-menu {  
+  width: max-content; 
+  margin-top: 2rem;
+}
+
+search-availability #booking-widget #vue-dropdown-home.dropdown-menu::after {
+  left: 1rem;
+}
+
+
+
+
+/* Booking Widget CSS - Reservations page */
+/* General element styling */
+/* General element styling */
+
+booking-widget #booking-widget .icon {
+  position: relative;
+  width: 100%;
+}
+
+booking-widget #booking-widget .vue-right-side {
+  margin: unset;
+}
+
+booking-widget #booking-widget .room-view .room .room-details {
+  position: relative;
+}
+
+
+
+/* Fonts, headings, colors */
+booking-widget #booking-widget h1.room-title,
+booking-widget #booking-widget h2 {
+ margin-bottom: 0em;
+}
+
+booking-widget #booking-widget .notify-container .fa, 
+booking-widget #booking-widget .notify-container h4.notify-title, 
+booking-widget #booking-widget .notify-text span.timerspan { 
+  color:var(--chakra-colors-red-500)!important;
+}
+
+booking-widget #booking-widget .reserveport-form-wrap h3,
+booking-widget #booking-widget h1.room-title,
+booking-widget #booking-widget h2, .modal-title, 
+booking-widget #booking-widget .vue-side_top_card h3 {
+  font: 2rem var(--chakra-fonts-bodyFont), sans-serif;
+}
+
+
+booking-widget #booking-widget a, 
+booking-widget #booking-widget .show-cp:hover,
+booking-widget #booking-widget .vue-show-details:hover,
+booking-widget #booking-widget .vue-show-tc:hover,
+booking-widget #vue-havepromo.vue-horizontal,
+booking-widget #booking-widget h1.room-title:hover {
+  color: var(--chakra-colors-red-500);
+}
+
+booking-widget #booking-widget h2 {
+  font-size: 2rem;
+}
+
+booking-widget #booking-widget button,
+booking-widget #booking-widget .vue-date-box label,
+booking-widget #booking-widget .content-body,
+booking-widget #booking-widget .vue-content-body, 
+booking-widget #booking-widget p, #booking-widget span {
+  font-family: var(--chakra-fonts-bodyFont), sans-serif !important;
+}
+
+booking-widget #mobile_booking_triger.btn-orange-solid {
+  font-size: 1.5rem;
+}
+
+/* Buttons & interactivity */
+booking-widget #vue-toggle_residency .vue-btn {
+  border: 1px solid var(--chakra-colors-red-500)!important;
+  background:#fff !important;
+  color:var(--chakra-colors-red-500);
+}
+
+booking-widget #booking-widget .mx-calendar-content .cell.active,
+booking-widget #booking-widget .btn-orange-solid,
+booking-widget #vue-toggle_residency .vue-btn.active,
+booking-widget #booking-widget .btn-solid,
+booking-widget #booking-widget .sub-total .btn.btn-solid,
+booking-widget #booking-widget .vue-btn-proceed, 
+booking-widget button#submitFormBtn,
+booking-widget #vue-btn-managebooking {
+  border: none !important;
+  background: var(--chakra-colors-red-500) !important;
+}
+
+booking-widget #booking-widget .mx-calendar-content .cell.active:hover,
+booking-widget #vue-toggle_residency .vue-btn:hover,
+booking-widget #booking-widget .btn-orange-solid:hover,
+booking-widget #booking-widget .sub-total .btn.btn-solid:hover,
+booking-widget #booking-widget .btn-solid:hover,
+booking-widget #booking-widget .vue-btn-proceed:hover {
+  background:var(--chakra-colors-red-600) !important;
+}
+
+
+booking-widget #booking-widget .hotel .notify-container, 
+booking-widget #booking-widget .reserveport-iframe-wrap .notify-container,
+booking-widget #booking-widget #alert-msg.ui-pnotify.ui-pnotify-inline {
+  background:var(--chakra-colors-red-600) !important;
+}
+
+booking-widget #booking-widget .room-title-details .pull-right .btn-solid {
+  margin-left: auto;
+  left: 0;
+  bottom: 0;
+}
+
+booking-widget #booking-widget #modalbookingForm {
+  padding-top: 4rem;
+}
+booking-widget #booking-widget .responsive {
+  max-width: unset;
+}
+
+booking-widget #booking-widget .close {
+  padding: 4px 6px;
+  border: 2px solid var(--chakra-colors-red-500);
+  opacity: 1;
+}
+
+#modalbookingForm button.close {
+  border: none;
+}
+
+
+/* Images */
+.vue-offers-card .card-img-top:hover {
+  transform: scale(4) translate(-5rem,-3rem);
+  transition: transform .5s ease;
+}
+
+.owl-carousel .owl-item img, booking-widget #booking-widget .room-full-slider img {
+  max-height: 400px;
+  object-fit: cover;
+  margin: auto;
+}
+
+booking-widget #bedimg, booking-widget .pull-right img {
+  filter: brightness(0) saturate(100%) invert(62%) sepia(87%) saturate(7495%) hue-rotate(344deg) brightness(97%) contrast(83%);
+/* Change icon color from green to red*/
+}
+
+/* booking-widget .room-title-details.row, 
+booking-widget .room-title-details .pull-right, figure {
+display: flex;
+} */
+
+#image-lightbox {
+  display: flex;
+  justify-content: center;
+}
+
+#image-lightbox .row {
+  margin-left: 0 !important;
+}
+
+#image-lightbox .modal-dialog, #image-lightbox .vue-lightbox img {
+  width: max-content;
+  max-width: 800px;
+}
+
+
+
+/* Responsive screen - Mobile & Tablet */
+@media (min-width: 992px) {
+  .modal-lg, .modal-xl {
+    max-width: max-content;
+  }
+}
+
+
+
+@media only screen and (max-width: 600px) {
+
+booking-widget #booking-widget #vue-smallScreen input, booking-widget #booking-widget #vue-smallScreen .vue-small_large_select {
+  text-transform: uppercase;
+  font-size: 1em;
+}
+
+#image-lightbox .modal-dialog {
+  position: relative;
+  transform: translate(0%, 0%) !important;
+  left: 0;
+  max-width: none;
+}
+.vue-mobile .col-md-6.col-xs-6 {
+  width: 50%;
+}
+
+#image-lightbox .row {
+  margin-right: 0;
+}
+
+#image-lightbox .vue-lightbox img {
+  width: 100%;
+}
+
+.navbar button.navbar-toggle {
+  margin: 0;
+}
+
+booking-widget .navbar .container {
+  width: 100%;
+  padding: 0;
+  justify-content: flex-start;
+}
+booking-widget .room-full-slider[data-v-61becf76] {
+  width: 576px;
+}
+}
+
