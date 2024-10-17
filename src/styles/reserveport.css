@@ -3,18 +3,31 @@
 
 a.chakra-link:hover {
   text-decoration: none;
+  color: white;
 }
 
 search-availability {
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
   margin-top: 0px;
   display: block;
   background: none;
   position: absolute;
-  margin-top: -8rem;
+  margin-top: -7rem;
   left: 0;
   right: 0;
+}
+/* Responsive screen - Mobile & Tablet */
+@media (min-width: 1024px) {
+  search-availability {
+    width: 76%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  search-availability {
+    margin-top: -18rem;
+  }
 }
 
 search-availability #booking-widget .reserveport-form-wrap {
@@ -45,7 +58,7 @@ search-availability #app #booking-widget div.vue-search-box {
 search-availability #booking-widget #vue-btn-search.btn-orange-solid { 
     background: var(--chakra-colors-red-600) !important;
     color: white; 
-    font: 1em var(--chakra-fonts-bodyFont), sans-serif;
+    font: 600 1em var(--chakra-fonts-bodyFont), sans-serif;
     border-radius: var(--chakra-radii-md);
 }
 
@@ -64,11 +77,7 @@ search-availability #booking-widget #vue-dropdown-home.dropdown-menu::after {
   left: 1rem;
 }
 
-@media only screen and (max-width: 991px) {
-  search-availability {
-    margin-top: -18rem;
-  }
-}
+
 
 
 /* Booking Widget CSS - Reservations page */
@@ -243,6 +252,8 @@ display: flex;
   }
 }
 
+
+
 @media only screen and (max-width: 600px) {
 
 booking-widget #booking-widget #vue-smallScreen input, booking-widget #booking-widget #vue-smallScreen .vue-small_large_select {
@@ -272,12 +283,12 @@ booking-widget #booking-widget #vue-smallScreen input, booking-widget #booking-w
   margin: 0;
 }
 
-.navbar .container {
+booking-widget .navbar .container {
   width: 100%;
   padding: 0;
   justify-content: flex-start;
 }
-.room-full-slider[data-v-61becf76] {
+booking-widget .room-full-slider[data-v-61becf76] {
   width: 576px;
 }
 }

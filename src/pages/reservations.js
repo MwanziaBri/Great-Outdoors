@@ -33,9 +33,9 @@ export default function Home() {
       <Box>
         <NavBar />
       </Box>
-
+      <Box>
       <booking-widget id="1687"></booking-widget>
-
+      </Box>
       <Box>
         <Footer />
       </Box>
