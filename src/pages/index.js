@@ -89,7 +89,7 @@ export default function Home() {
           {/* <LandingPageImageSlider /> */}
 
           <Carousel2  slides={slides}/>
-          {/* < BookingsWidget /> */}
+          < BookingsWidget />
 
           {/* <FloatingReservationsComponent /> */}
           {/* <AboutUsComponent /> */}
