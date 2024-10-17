@@ -51,13 +51,6 @@ export default function Home() {
   }, []);  // Empty dependency array ensures this runs once on component mount
 
   return (
-    <>
-    <Head>
-      <Script src="https://www.reserveport.com/media/api5/jquery.min.js" strategy="beforeInteractive" />
-      <Script src="https://www.reserveport.com/media/api5/popper.min.js" strategy="beforeInteractive" />
-      <Script src="https://www.reserveport.com/media/api5/bootstrap.min.js" strategy="beforeInteractive" />
-    </Head>
     <search-availability id="1687" clientemail="true"></search-availability>
-    </>
   );
 }
