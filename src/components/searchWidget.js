@@ -20,6 +20,7 @@ const stylesheets = [
 ];
 
 export default function Home() {
+  const [scriptsLoaded, setScriptsLoaded] = useState(false);
   useEffect(() => {
     // Function to dynamically load external scripts
     const loadScripts = () => {
@@ -28,6 +29,12 @@ export default function Home() {
           const script = document.createElement("script");
           script.src = src;
           script.async = true;
+          script.onload = () => {
+            loadedCount += 1;
+            if (loadedCount === scripts.length) {
+              setScriptsLoaded(true); // All scripts are loaded
+            }
+          };
           document.body.appendChild(script);
         }
       });
@@ -61,7 +68,12 @@ export default function Home() {
       <Script src="https://www.reserveport.com/media/api5/popper.min.js" strategy="beforeInteractive" />
       <Script src="https://www.reserveport.com/media/api5/bootstrap.min.js" strategy="beforeInteractive" />
     </Head>
-    <search-availability id="1687" clientemail="true"></search-availability>
+    {/* Render the <search-availability> component only when scripts are loaded */}
+    {scriptsLoaded ? (
+        <search-availability id="1687" clientemail="true"></search-availability>
+      ) : (
+        <Box>Loading widget...</Box>
+      )}
     </>
   );
 }
