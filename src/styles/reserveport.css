@@ -149,8 +149,8 @@ booking-widget #booking-widget .sub-total .btn.btn-solid,
 booking-widget #booking-widget .vue-btn-proceed, 
 booking-widget button#submitFormBtn,
 booking-widget #vue-btn-managebooking {
-border: none !important;
-background: var(--chakra-colors-red-500) !important;
+  border: none !important;
+  background: var(--chakra-colors-red-500) !important;
 }
 
 booking-widget #booking-widget .mx-calendar-content .cell.active:hover,

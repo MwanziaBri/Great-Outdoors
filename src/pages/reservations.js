@@ -24,31 +24,22 @@ export default function Home() {
         <script type="text/javascript" src="https://www.reserveport.com/media/api5/popper.min.js"></script>
         <script type="text/javascript" src="https://www.reserveport.com/media/api5/bootstrap.min.js"></script>
         <script src="https://www.reserveport.com/media/api5/jquery.min.js"></script>
+
+        <script src="https://reservations.reserveport.com/static/js/manifest.js"></script>
+        <script src="https://reservations.reserveport.com/static/js/vendor.js"></script>
+        <script src="https://reservations.reserveport.com/static/js/app.js"></script>
       </Head>
 
       <Box>
         <NavBar />
       </Box>
 
-      <Box
-        bg={'whiteAlpha'}
-        backgroundSize={'cover'}
-        bgRepeat={'no-repeat'}
-        minHeight={'100vh'}
-        pt={{ base: 24, lg: 32 }}
-      >
-
       <booking-widget id="1687"></booking-widget>
-
-      </Box>
 
       <Box>
         <Footer />
       </Box>
 
-      <script src="https://reservations.reserveport.com/static/js/manifest.js"></script>
-      <script src="https://reservations.reserveport.com/static/js/vendor.js"></script>
-      <script src="https://reservations.reserveport.com/static/js/app.js"></script>
     </Box>
   );
 }
