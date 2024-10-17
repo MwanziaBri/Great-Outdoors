@@ -38,6 +38,12 @@ search-availability #booking-widget .reserveport-form-wrap {
   border-radius: var(--chakra-radii-md);
 }
 
+@media only screen and (max-width: 600px) {
+  #booking-widget .reserveport-form-wrap, #booking-widget .vue-search-box {
+    display: block;
+  }
+}
+
 search-availability #booking-widget .vue-date-box .vue-btn-wrap.avail-wrap.vue-md_p5 {  
   background: none !important;
 }
