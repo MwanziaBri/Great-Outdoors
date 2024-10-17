@@ -20,8 +20,6 @@ import AboutUsComponent2 from '../components/landingPage/AboutUsComponent2'
 import EatAndDrinkComponent2 from '../components/landingPage/EatAndDrinkComponent2'
 import Carousel2 from '../components/carousel2'
 
-import SearchWidget from '../components/searchWidget'
-
 import NavBar from '../components/navbar' 
 import Footer from '../components/footer' 
 
@@ -75,9 +73,9 @@ export default function Home() {
         <link rel="stylesheet" href="https://www.reserveport.com/media/api5/bootstrap.min.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css" />
 
-        <script src="https://reservations.reserveport.com/static/js/manifest.js"></script>
-        <script src="https://reservations.reserveport.com/static/js/vendor.js"></script>
-        <script src="https://reservations.reserveport.com/static/js/app.js"></script>
+        <script src="https://reservations.reserveport.com/checkavailability/static/js/manifest.js"></script>
+        <script src="https://reservations.reserveport.com/checkavailability/static/js/vendor.js"></script>
+        <script src="https://reservations.reserveport.com/checkavailability/static/js/app.js"></script>
 
         <script src="https://www.reserveport.com/media/api5/jquery.min.js" async></script>
         <script src="https://www.reserveport.com/media/api5/popper.min.js" async></script>
@@ -100,7 +98,8 @@ export default function Home() {
           {/* <LandingPageImageSlider /> */}
 
           <Carousel2  slides={slides}/>
-          <SearchWidget />
+          
+          <search-availability id="1687" clientemail="true"></search-availability>
 
           {/* <FloatingReservationsComponent /> */}
           {/* <AboutUsComponent /> */}
