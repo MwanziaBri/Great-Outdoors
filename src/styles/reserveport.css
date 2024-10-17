@@ -1,3 +1,72 @@
+
+/* Reserveport search widget styles */
+search-availability {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 0px;
+  display: block;
+  background: none;
+  position: absolute;
+  margin-top: -8rem;
+  left: 0;
+  right: 0;
+}
+
+search-availability #booking-widget .reserveport-form-wrap {
+  padding: .75rem 0 !important;
+  box-shadow: 0px 0px 12px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 0 !important;
+  border-radius: var(--chakra-radii-md);
+}
+
+search-availability #booking-widget .vue-date-box .vue-btn-wrap.avail-wrap.vue-md_p5 {  
+  background: none !important;
+}
+
+search-availability #booking-widget .vue-coupon_code_screen[data-v-49eef604] {
+  max-width: fit-content;
+}
+
+search-availability #booking-widget, 
+search-availability #app #booking-widget .vue-date-box label, 
+search-availability #booking-widget input.vue-email_screen {
+    font-family: var(--chakra-fonts-bodyFont), sans-serif;
+}
+search-availability #app #booking-widget div.vue-search-box {
+  margin-bottom: 0;
+}
+
+search-availability #booking-widget #vue-btn-search.btn-orange-solid { 
+    background: var(--chakra-colors-red-600) !important;
+    color: white; 
+    font: 1em var(--chakra-fonts-bodyFont), sans-serif;
+    border-radius: var(--chakra-radii-md);
+}
+
+search-availability a#havepromo.vue-horizontal { 
+  color: var(--chakra-colors-red-600) !important;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+search-availability #booking-widget #vue-dropdown-home.dropdown-menu {  
+  width: max-content; 
+  margin-top: 2rem;
+}
+
+search-availability #booking-widget #vue-dropdown-home.dropdown-menu::after {
+  left: 1rem;
+}
+
+@media only screen and (max-width: 991px) {
+  search-availability {
+    margin-top: -18rem;
+  }
+}
+
+
+/* Booking Widget CSS - Reservations page */
 /* General element styling */
 
 #booking-widget {
